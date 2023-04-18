@@ -5,12 +5,10 @@
 console.log(this)
 
 $(function () {
-  var eventText = $("#description");
-  var saveBtn = $("#saveBtn");
+  var eventText = $("textarea.description");
+  var saveBtn = $(".saveBtn");
   var currentDate = $("#currentDay");
-  var pastTime = $("#past");
-  var presentTime = $("#present");
-  var futureTime = $("#future");
+
 
   // Display current date
   var today = dayjs();
@@ -53,6 +51,8 @@ $(function () {
     timeBlockEl.append(hourEl, descriptionEl, saveBtnEl);
     return timeBlockEl;
   }
+
+  var saveBtn = $(".saveBtn");
 
   saveBtn.on("click", function() {
     var hour = $(this).parent().attr("id").replace("hour-", "");
